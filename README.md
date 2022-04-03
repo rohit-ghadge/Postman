@@ -1,14 +1,27 @@
 # Postman Request different optoins
 
-## Pass data inside Body
+## Pass data inside Header
 ![Get](https://user-images.githubusercontent.com/57706022/151702664-33fb9e35-3018-4290-a7c5-9c19dfe92f18.png)
 
 
-## Run following SQL insert statements
+## Controller
 ```
-INSERT INTO roles(name) VALUES('ROLE_USER');
-INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
-INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+  // Check Token is Valid or Not
+    @Override
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws       ServletException, IOException 
+    {
+    	// Header Key Muse be = "Authorization"
+        String authorization = httpServletRequest.getHeader("Authorization");
+        String token = null;
+        String userName = null;
+
+        // Check Header Value start with "Bearer "
+        if(null != authorization && authorization.startsWith("Bearer "))
+        {
+            token = authorization.substring(7);
+            userName = jwtUtility.getUsernameFromToken(token);
+        }
+
 ```
 
 -- Pass data inside body
