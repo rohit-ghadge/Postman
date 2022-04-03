@@ -1,3 +1,16 @@
+# Postman Request different optoins
+
+## Pass data inside Body
+![Get](https://user-images.githubusercontent.com/57706022/151702664-33fb9e35-3018-4290-a7c5-9c19dfe92f18.png)
+
+
+## Run following SQL insert statements
+```
+INSERT INTO roles(name) VALUES('ROLE_USER');
+INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+```
+
 -- Pass data inside body
 
 http://localhost:8080//api/test/save
@@ -29,13 +42,4 @@ public class TestController
 }    
 ------------------------------------------------------------------------------------------------------------------------
 
-Get Request
-![Get](https://user-images.githubusercontent.com/57706022/151702664-33fb9e35-3018-4290-a7c5-9c19dfe92f18.png)
 
-
-## Run following SQL insert statements
-```
-INSERT INTO roles(name) VALUES('ROLE_USER');
-INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
-INSERT INTO roles(name) VALUES('ROLE_ADMIN');
-```
